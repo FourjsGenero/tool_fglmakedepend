@@ -1,0 +1,7 @@
+IMPORT FGL b
+IMPORT FGL c
+FUNCTION a()
+  DISPLAY "in a"
+  CALL b.b(1)
+  CALL c.c1()
+END FUNCTION

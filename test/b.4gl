@@ -1,0 +1,3 @@
+FUNCTION b(a INT)
+  DISPLAY "in b mod",a
+END FUNCTION

@@ -1,0 +1,12 @@
+#!/bin/bash
+realpath() {
+    [[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}"
+}
+
+FGLMAKEDEPEND=`realpath $0`
+export FGLMAKEDEPEND
+FGLMAKEDEPENDDIR=`dirname $FGLMAKEDEPEND` 
+#we recompile everything always: hence avoid version clashes
+make -C $FGLMAKEDEPENDDIR clean_prog all > /dev/null
+export FGLMAKEDEPENDDIR
+exec fglrun $FGLMAKEDEPENDDIR/fglmakedepend.42m "$@" 
