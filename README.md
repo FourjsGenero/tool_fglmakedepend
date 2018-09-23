@@ -10,7 +10,7 @@ typical usage is after the fglcomp step of a 4gl file
 
 ```
 %.42m: %.4gl 
-	fglcomp -M --resolve-calls $* && ../fglmakedepend $@
+	fglcomp -M --resolve-calls $* && fglmakedepend $@
 ```
 
 Email comments/suggestions/wishes to : l s a t 4 j s d o t c o m
